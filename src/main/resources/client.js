@@ -216,23 +216,23 @@ function Logger() {
 }
 
 Logger.prototype.debug = function (message) {
-    _jsLogger.debug(message);
+    _jsLogger.debug(JSON.stringify(message));
 }
 
 Logger.prototype.info = function (message) {
-    _jsLogger.info(message);
+    _jsLogger.info(JSON.stringify(message));
 }
 
 Logger.prototype.warn = function (message) {
-    _jsLogger.warn(message);
+    _jsLogger.warn(JSON.stringify(message));
 }
 
 Logger.prototype.error = function (message) {
-    _jsLogger.error(message);
+    _jsLogger.error(JSON.stringify(message));
 }
 
 Logger.prototype.trace = function (message) {
-    _jsLogger.trace(message);
+    _jsLogger.trace(JSON.stringify(message));
 }
 
 ///////////// TermColors /////////////
