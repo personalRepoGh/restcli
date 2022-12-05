@@ -40,7 +40,7 @@ class EnvironmentVariableInjectorImpl(
         if (environments.isEmpty()) {
             return source
         }
-        var result = source.utf8().replace("\n", "")
+        var result = source.utf8().replace("$\n".toRegex(), "")
         val matches = VARIABLE_REGEX.findAll(source.utf8()).toList()
 
         // MUST replace variable string reversed for keeping match index.
@@ -51,7 +51,6 @@ class EnvironmentVariableInjectorImpl(
                 result = result.replaceRange(it.range, variableValue.value)
             }
         }
-        result.encodeUtf8()
 
         return result.encodeUtf8()
     }
